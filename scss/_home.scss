@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    transition: all 1s ease;
+}
+
+body {
+    background-color: $light-gray-blue;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    margin: 0px;
+}
+
+// Grid-card//
+.grid-cards {
+    display: grid;
+    justify-content: center;
+    padding: 0 25px;
+    padding-top: 70px;
+    gap: 25px;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(5, min-content);
+    grid-template-areas: "Daniel" "Jonathan" "Jeanette" "Patrick" "Kira";
+    transition: all 1s;
+    // 
+    //Media Query//
+    @include set-mq (small) {
+        padding: 0 30px;
+        padding-top: 160px;
+        gap: 25px 30px;
+        grid-template-columns: repeat(2, minmax(236px, 255px));
+        grid-template-rows: 282px 282px 268px 282px;
+        grid-template-areas: "Daniel Daniel" "Jonathan Jeanette" "Patrick Patrick" "Kira Kira";
+    }
+    @include set-mq (medium) {
+        grid-template-columns: repeat(3, minmax(216px, 255px));
+        grid-template-rows: minmax(min-content, 282px) minmax(min-content, 262px) minmax(min-content, 232px);
+        grid-template-areas: "Daniel Daniel Jonathan" "Jeanette Patrick Patrick" "Kira Kira Kira";
+    }
+    @include set-mq (xlarge) {
+        grid-template-columns: repeat(4, 255px);
+        grid-template-rows: 282px 262px;
+        grid-template-areas: "Daniel Daniel Jonathan Kira" "Jeanette Patrick Patrick Kira";
+    }
+    // 
+    // Media Query
+    @media screen and (min-height: 1172px) and (min-width:768px) {
+        & {
+            height: calc( 100vh - 77px);
+        }
+    }
+    @media screen and (min-height: 1070px) and (min-width:992px) {
+        & {
+            height: calc( 100vh - 77px);
+        }
+    }
+    @media screen and (min-height: 810px) and (min-width:1200px) {
+        & {
+            height: calc( 100vh - 77px);
+        }
+    }
+}
+
+// 
+// Card//
+.card {
+    border-radius: 10px;
+    padding: 25px 33px 33px;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.1);
+    &__user {
+        display: flex;
+        align-items: center;
+    }
+    &__wrap {
+        margin: auto 0;
+        align-items: center;
+        padding-left: 18px;
+    }
+    &__name {
+        font-size: 12px;
+        margin: 0px;
+        font-weight: 600;
+    }
+    &__sub {
+        font-size: 11px;
+        margin: 0px;
+        opacity: 50%;
+        font-weight: 300;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 15px 0 16px;
+    }
+    &__quote {
+        font-size: 13px;
+        line-height: 1.4;
+        letter-spacing: 0.1px;
+        margin: 0px;
+        opacity: 80%;
+    }
+    img {
+        height: 32px;
+        width: 32px;
+        border-radius: 50px;
+    }
+    // 
+    // Daniel //
+    &:first-child {
+        grid-area: Daniel;
+        background-color: $violet;
+        background-image: url("/images/bg-pattern-quotation.svg");
+        background-repeat: no-repeat;
+        background-position: top right 25px;
+        color: $white;
+        img {
+            border: 2px solid hsla(0, 0%, 100%, 0.3);
+        }
+    }
+    // 
+    // Johnathan //
+    &:nth-child(2) {
+        grid-area: Jonathan;
+        background-color: $dark-gray-blue;
+        color: $white;
+    }
+    // 
+    // Jeanette //
+    &:nth-child(3) {
+        grid-area: Jeanette;
+        background-color: $white;
+        color: $dark-gray-blue;
+    }
+    // 
+    // Patrick //
+    &:nth-child(4) {
+        grid-area: Patrick;
+        background-color: $dark-blue;
+        color: $white;
+        img {
+            border: 2px solid $violet;
+        }
+    }
+    // 
+    // Kira //
+    &:nth-child(5) {
+        grid-area: Kira;
+        background-color: $white;
+        color: $dark-gray-blue;
+    }
+    // 
+    // Media Query//
+    @include set-mq(small) {
+        &__quote {
+            letter-spacing: 0.1px;
+        }
+        &:first-child {
+            background-image: url("/images/bg-pattern-quotation.svg");
+            background-repeat: no-repeat;
+            background-position: top right 80px;
+        }
+    }
+}
+
+// 
+//Footer//
+footer {
+    padding: 32px 0;
+    text-align: center;
+    .attribution {
+        font-size: 11px;
+        margin: 0px;
+        a {
+            color: $violet;
+            font-weight: 600;
+            text-decoration: none;
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+                color: $violet;
+                outline: none;
+            }
+        }
+    }
+}

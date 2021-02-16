@@ -1,0 +1,14 @@
+// 
+// Mixin breakpoint
+@mixin set-mq ($breakpoint) {
+    @if map-has-key($set-breakpoint, $breakpoint) {
+        @media screen and (min-width: map-get($set-breakpoint, $breakpoint)) {
+            @content;
+        }
+    }
+    @else {
+        @media screen and (min-width: $breakpoint) {
+            @content;
+        }
+    }
+}

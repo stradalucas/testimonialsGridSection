@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600&display=swap");
+* {
+  box-sizing: border-box;
+  transition: all 1s ease;
+}
+
+body {
+  background-color: #ecf2f8;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  margin: 0px;
+}
+
+.grid-cards {
+  display: grid;
+  justify-content: center;
+  padding: 0 25px;
+  padding-top: 70px;
+  gap: 25px;
+  grid-template-columns: repeat(1, 100%);
+  grid-template-rows: repeat(5, min-content);
+  grid-template-areas: "Daniel" "Jonathan" "Jeanette" "Patrick" "Kira";
+  transition: all 1s;
+}
+
+@media screen and (min-width: 576px) {
+  .grid-cards {
+    padding: 0 30px;
+    padding-top: 160px;
+    gap: 25px 30px;
+    grid-template-columns: repeat(2, minmax(236px, 255px));
+    grid-template-rows: 282px 282px 268px 282px;
+    grid-template-areas: "Daniel Daniel" "Jonathan Jeanette" "Patrick Patrick" "Kira Kira";
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid-cards {
+    grid-template-columns: repeat(3, minmax(216px, 255px));
+    grid-template-rows: minmax(min-content, 282px) minmax(min-content, 262px) minmax(min-content, 232px);
+    grid-template-areas: "Daniel Daniel Jonathan" "Jeanette Patrick Patrick" "Kira Kira Kira";
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .grid-cards {
+    grid-template-columns: repeat(4, 255px);
+    grid-template-rows: 282px 262px;
+    grid-template-areas: "Daniel Daniel Jonathan Kira" "Jeanette Patrick Patrick Kira";
+  }
+}
+
+@media screen and (min-height: 1172px) and (min-width: 768px) {
+  .grid-cards {
+    height: calc( 100vh - 77px);
+  }
+}
+
+@media screen and (min-height: 1070px) and (min-width: 992px) {
+  .grid-cards {
+    height: calc( 100vh - 77px);
+  }
+}
+
+@media screen and (min-height: 810px) and (min-width: 1200px) {
+  .grid-cards {
+    height: calc( 100vh - 77px);
+  }
+}
+
+.card {
+  border-radius: 10px;
+  padding: 25px 33px 33px;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card__user {
+  display: flex;
+  align-items: center;
+}
+
+.card__wrap {
+  margin: auto 0;
+  align-items: center;
+  padding-left: 18px;
+}
+
+.card__name {
+  font-size: 12px;
+  margin: 0px;
+  font-weight: 600;
+}
+
+.card__sub {
+  font-size: 11px;
+  margin: 0px;
+  opacity: 50%;
+  font-weight: 300;
+}
+
+.card__title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 15px 0 16px;
+}
+
+.card__quote {
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.1px;
+  margin: 0px;
+  opacity: 80%;
+}
+
+.card img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50px;
+}
+
+.card:first-child {
+  grid-area: Daniel;
+  background-color: #7541c8;
+  background-image: url("/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 25px;
+  color: white;
+}
+
+.card:first-child img {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.card:nth-child(2) {
+  grid-area: Jonathan;
+  background-color: #48556a;
+  color: white;
+}
+
+.card:nth-child(3) {
+  grid-area: Jeanette;
+  background-color: white;
+  color: #48556a;
+}
+
+.card:nth-child(4) {
+  grid-area: Patrick;
+  background-color: #19212e;
+  color: white;
+}
+
+.card:nth-child(4) img {
+  border: 2px solid #7541c8;
+}
+
+.card:nth-child(5) {
+  grid-area: Kira;
+  background-color: white;
+  color: #48556a;
+}
+
+@media screen and (min-width: 576px) {
+  .card__quote {
+    letter-spacing: 0.1px;
+  }
+  .card:first-child {
+    background-image: url("/images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right 80px;
+  }
+}
+
+footer {
+  padding: 32px 0;
+  text-align: center;
+}
+
+footer .attribution {
+  font-size: 11px;
+  margin: 0px;
+}
+
+footer .attribution a {
+  color: #7541c8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer .attribution a:hover, footer .attribution a:focus {
+  text-decoration: underline;
+  color: #7541c8;
+  outline: none;
+}
+/*# sourceMappingURL=style.css.map */
